@@ -12,6 +12,9 @@ h6,
 strong {
     color: #444444;
 }
+p {
+    font-family: 'Raleway', sans-serif;
+}
 @media (min-width: 1200px) {
     .container {
         max-width: 1170px;
@@ -456,15 +459,15 @@ number section ends
     margin-left: 0;
     padding-left: 20px;
     list-style-type: none;
-    position: relative;
     column-count: 2;
 }
-.check-square>li {
+.check-square > li {
+    position: relative;
     margin-bottom: 20px;
 }
 .check-square li::before {
     top: 0;
-    left: 0;
+    left: -20px;
     content: '\f14a';
     font-family: 'Font Awesome 5 Free';
     font-size: inherit;
@@ -492,7 +495,7 @@ services section
     margin: 0;
     font-size: 16px;
 }
-.serviceItem>p {
+.serviceItem > p {
     grid-column: 1/-1;
 }
 /* ============================================
@@ -539,7 +542,7 @@ team section ends
     gap: 20px;
 }
 .teamMember:hover {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .teamMember:hover .memberInfo {
@@ -562,6 +565,39 @@ why chose us section ends
 .whyChoseImg {
     display: flex;
     justify-content: center;
+}
+.whyChoseItem {
+    border: 1px solid #dddddd;
+    margin-bottom: 20px;
+}
+.whyChoseHeading {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 50px;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #dddddd;
+}
+.whyChoseItemIcon {
+    display: flex;
+    justify-content: center;
+    height: calc(100% + 1px );
+    width: 100%;
+    align-items: center;
+    transition: all 300ms ease-in-out;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    background: #ff7200;
+}
+.whyChoseHeading.collapsed .whyChoseItemIcon {
+    background: #dddddd;
+}
+.whyChoseItemIcon i {
+    font-size: 15px;
+    color: #fff;
+}
+.whyChoseHeading.collapsed .whyChoseItemIcon i {
+    color: #444444;
 }
 /* ============================================
 why chose us section ends
